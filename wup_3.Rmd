@@ -34,10 +34,36 @@ basicCN + geom_boxplot()
 ```{r}
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
+  
+
+The box for the back rows a lot lot larger than than the front and middle seat, The red dots, the outliers, are shown above each box. The difference in the sizes will be ran with a series of t.tests, two at the time to show the significance.  
 
 ## Numerical Summarys 
 
+```{r}
+favstats(alcohol~Seat,data=davisdata)
+```
+   
+The number of people who had chosen to seat in the back row was 32. While the front row had contained 33 people, and then the lastly the middle which had the largest amount of 83 people. 
+  
+  
 ## Inferential Tests
+
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+  
+the inferential tests shows that the probability is too low, at 0.000116. we reject the null hypothesis as is.
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 8.7, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+
+
+A multiple comparison test showcases a substantial difference or a lack of using each pair of data. The comparison of the middle row and the front had little to no difference to each other. The middle and the back seats are on the right portion of this graph and therefore shows the negative result, based on the bottom of this line, which is placing it at approximatly -11. The front and back were compared and showed the most significant change in numerical data. The bracket is in the negative numbers at around -13. this inference explains the most drinking was done by the back row.    
 
 ## Conclusions
 
