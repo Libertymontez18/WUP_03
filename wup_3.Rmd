@@ -44,8 +44,8 @@ The box for the back rows a lot lot larger than than the front and middle seat, 
 favstats(alcohol~Seat,data=davisdata)
 ```
    
-The number of people who had chosen to seat in the back row was 32. While the front row had contained 33 people, and then the lastly the middle which had the largest amount of 83 people. 
-  
+The number of people who had chosen to seat in the back row was 32. While the front row had contained 33 people, and then the lastly the middle which had the largest amount of 83 people. The quadrants displayed by Q are ordered by the row and in quadrants one and as well as quadrant 3. In the very first quadrant all three showed results in which the largest result of 0.75 in the back row, the front and middle had no variance. Then the third quadrant in which had shown similar or the same exact results. The largest quadrant result of 14.25 was expressed in the very back row.  
+
   
 ## Inferential Tests
 
@@ -54,7 +54,7 @@ model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
   
-the inferential tests shows that the probability is too low, at 0.000116. we reject the null hypothesis as is.
+the inferential tests shows that the probability is too low, at 0.000116. we reject the null hypothesis as is. 
 
 ```{r}
 #we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
@@ -67,4 +67,4 @@ A multiple comparison test showcases a substantial difference or a lack of using
 
 ## Conclusions
 
-
+to discuss these results on the data we have acquired, we ran a number of tests and compared each of the results, through a multiple comparison test we were able to display the number differences and even that of a large portion of the data agreed that the back row had the most instances of drinking compared to the front and middle seats. The categorical data was organized in numerical summaries.
